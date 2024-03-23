@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-font: "Jost", sans-serif;
+  --background-color: #f7f8fd;
+  --midnight-blue: #373f68;
+  --purple: #ad1fea;
+  --dark-text-color: #3a4374;
+  --light-text-color: #647196;
+  --light-tile-color: #f2f4ff;
+  --blue: #4661e6;
+  --light-blue: #8397f8;
+  --red: #d73737;
+}
