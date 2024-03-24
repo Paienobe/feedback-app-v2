@@ -5,6 +5,7 @@
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
+  max-height: 4.75rem;
 }
 
 .navbar svg {

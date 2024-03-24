@@ -4,9 +4,9 @@ const DownArrow = () => {
       <path
         d="M1 1l4 4 4-4"
         stroke="rgba(225, 225, 225, 0.75)"
-        stroke-width="2"
+        strokeWidth="2"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
     </svg>
   );

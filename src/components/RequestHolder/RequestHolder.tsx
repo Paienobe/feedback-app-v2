@@ -10,7 +10,7 @@ const RequestHolder = () => {
   return (
     <section className={styles.request_holder}>
       {productRequests.map((request) => {
-        return <ProductRequest key={request.id} />;
+        return <ProductRequest key={request.id} request={request} />;
       })}
     </section>
   );

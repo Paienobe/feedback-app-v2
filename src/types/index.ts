@@ -1,4 +1,4 @@
-export interface Welcome5 {
+export interface Request {
   id: number;
   title: string;
   category: string;
