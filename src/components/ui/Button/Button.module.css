@@ -1,0 +1,13 @@
+.button {
+  font-size: 0.875rem;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--main-border-radius);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.button:hover {
+  filter: brightness(110%);
+}

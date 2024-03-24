@@ -1,0 +1,41 @@
+.navbar {
+  background-color: var(--midnight-blue);
+  border-radius: var(--main-border-radius);
+  padding: 1rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.navbar svg {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.navbar > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar > div:first-of-type > h1 {
+  font-size: 1.125rem;
+}
+
+.navbar > button:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: none;
+  background-color: transparent;
+  color: rgba(225, 225, 225, 0.75);
+  cursor: pointer;
+}
+
+.navbar > button:first-of-type > span {
+  font-weight: 700;
+}
+
+.navbar > button:last-of-type {
+  justify-self: end;
+}

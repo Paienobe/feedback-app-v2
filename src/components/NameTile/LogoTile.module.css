@@ -1,0 +1,23 @@
+.logo_tile {
+  border-radius: var(--main-border-radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.logo_tile img {
+  width: 100%;
+}
+
+.logo_tile > div {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  color: white;
+}
+
+.logo_tile > div > p > span {
+  font-weight: 700;
+  font-size: 1.25rem;
+}

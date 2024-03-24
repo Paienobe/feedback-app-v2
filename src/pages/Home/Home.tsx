@@ -1,7 +1,14 @@
+import MainSection from "../../components/MainSection/MainSection";
+import SideSection from "../../components/SideSection/SideSection";
 import styles from "./Home.module.css";
 
 const Home = () => {
-  return <div className={styles.home_page}></div>;
+  return (
+    <section className={styles.home_page}>
+      <SideSection />
+      <MainSection />
+    </section>
+  );
 };
 
 export default Home;

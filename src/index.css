@@ -8,7 +8,9 @@
   --dark-text-color: #3a4374;
   --light-text-color: #647196;
   --light-tile-color: #f2f4ff;
+  --hovered-light-tile: #cfd7ff;
   --blue: #4661e6;
   --light-blue: #8397f8;
   --red: #d73737;
+  --main-border-radius: 0.625rem;
 }

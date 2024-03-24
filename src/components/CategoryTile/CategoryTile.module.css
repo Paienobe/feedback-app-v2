@@ -1,0 +1,29 @@
+.category_tile {
+  background-color: white;
+  border-radius: var(--main-border-radius);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.category_tile > button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.35rem 1rem;
+  border: none;
+  border-radius: var(--main-border-radius);
+  color: var(--blue);
+  background-color: var(--light-tile-color);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.category_tile > button:not(.active_btn):hover {
+  background-color: var(--hovered-light-tile);
+}
+
+.category_tile > button:is(.active_btn) {
+  background-color: var(--blue);
+  color: white;
+}
