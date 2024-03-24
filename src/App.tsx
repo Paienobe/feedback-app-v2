@@ -3,9 +3,9 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import { Provider } from "react-redux";
 import store from "./store/store";
-import Comments from "./pages/Comments/Comments";
 import Roadmap from "./pages/Roadmap/Roadmap";
 import Add from "./pages/Add/Add";
+import CommentsPage from "./pages/Comments/CommentsPage";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/comments/:id" element={<Comments />} />
+            <Route path="/comments/:id" element={<CommentsPage />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/add" element={<Add />} />
           </Routes>

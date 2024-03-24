@@ -1,5 +1,5 @@
-import MainSection from "../../components/MainSection/MainSection";
-import SideSection from "../../components/SideSection/SideSection";
+import MainSection from "../../components/layouts/MainSection/MainSection";
+import SideSection from "../../components/layouts/SideSection/SideSection";
 import styles from "./Home.module.css";
 
 const Home = () => {

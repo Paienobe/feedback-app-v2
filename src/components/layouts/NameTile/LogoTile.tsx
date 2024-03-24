@@ -1,7 +1,7 @@
 import styles from "./LogoTile.module.css";
-import bgMobile from "../../assets/suggestions/mobile/background-header.png";
-import bgDesktop from "../../assets/suggestions/desktop/background-header.png";
-import bgTablet from "../../assets/suggestions/tablet/background-header.png";
+import bgMobile from "../../../assets/suggestions/mobile/background-header.png";
+import bgDesktop from "../../../assets/suggestions/desktop/background-header.png";
+import bgTablet from "../../../assets/suggestions/tablet/background-header.png";
 
 const LogoTile = () => {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./CategoryTile.module.css";
 import { useDispatch } from "react-redux";
-import { filter } from "../../store/slices/productRequestsSlice";
+import { filter } from "../../../store/slices/productRequestsSlice";
 
 const CategoryTile = () => {
   const categories = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];

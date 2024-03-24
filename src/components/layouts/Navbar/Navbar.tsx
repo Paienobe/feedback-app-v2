@@ -1,9 +1,9 @@
-import Bulb from "../svgs/Bulb";
+import Bulb from "../../svgs/Bulb";
 import styles from "./Navbar.module.css";
-import DownArrow from "../svgs/DownArrow";
-import Button from "../ui/Button/Button";
+import DownArrow from "../../svgs/DownArrow";
+import Button from "../../ui/Button/Button";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 
 const Navbar = () => {
   const suggestions = useSelector(

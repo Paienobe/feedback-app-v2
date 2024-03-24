@@ -1,9 +1,9 @@
 import styles from "./ProductRequest.module.css";
 import { ProductRequestProps } from "./types";
-import commentIcon from "../../assets/shared/icon-comments.svg";
-import upIcon from "../../assets/shared/icon-arrow-up.svg";
+import commentIcon from "../../../assets/shared/icon-comments.svg";
+import upIcon from "../../../assets/shared/icon-arrow-up.svg";
 import { useDispatch } from "react-redux";
-import { vote } from "../../store/slices/productRequestsSlice";
+import { vote } from "../../../store/slices/productRequestsSlice";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

@@ -1,9 +1,9 @@
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 import ProductRequest from "../ProductRequest/ProductRequest";
 import styles from "./RequestHolder.module.css";
 import { useSelector } from "react-redux";
-import emptyIllustration from "../../assets/suggestions/illustration-empty.svg";
-import Button from "../ui/Button/Button";
+import emptyIllustration from "../../../assets/suggestions/illustration-empty.svg";
+import Button from "../../ui/Button/Button";
 
 const RequestHolder = () => {
   const productRequests = useSelector(
