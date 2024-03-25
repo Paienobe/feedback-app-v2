@@ -1,0 +1,11 @@
+.comment_input {
+  margin-top: 1.5rem;
+  margin-left: 4.5rem;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 1rem;
+}
+
+.comment_input button {
+  justify-self: flex-end;
+}

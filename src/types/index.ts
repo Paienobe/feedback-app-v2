@@ -5,10 +5,10 @@ export interface Request {
   upvotes: number;
   status: string;
   description: string;
-  comments: Comment[];
+  comments: CommentType[];
 }
 
-export interface Comment {
+export interface CommentType {
   id: number;
   content: string;
   user: User;
