@@ -1,10 +1,10 @@
 import Button from "../../ui/Button/Button";
 import Textarea from "../../ui/Textarea/Textarea";
-import styles from "./CommentInput.module.css";
+import styles from "./ReplyInput.module.css";
 
-const CommentInput = () => {
+const ReplyInput = () => {
   return (
-    <form className={styles.comment_input}>
+    <form className={styles.reply_input}>
       <Textarea cols={10} rows={3.5} width="100%" />
       <Button
         text="Post Reply"
@@ -17,4 +17,4 @@ const CommentInput = () => {
   );
 };
 
-export default CommentInput;
+export default ReplyInput;

@@ -1,6 +1,7 @@
 .comment {
   padding: 1.5rem 0;
   border-bottom: 1px solid rgba(140, 146, 179, 0.25);
+  position: relative;
 }
 
 .comment:is(:last-of-type) {
@@ -68,4 +69,13 @@
 
 .is_reply {
   border-bottom: none;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 5rem);
+  background-color: rgba(140, 146, 179, 0.1);
+  top: 5rem;
+  left: calc(2.5rem / 2 - 2px);
 }

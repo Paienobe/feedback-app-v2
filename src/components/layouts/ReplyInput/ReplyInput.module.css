@@ -1,4 +1,4 @@
-.comment_input {
+.reply_input {
   margin-top: 1.5rem;
   margin-left: 4.5rem;
   display: grid;
@@ -6,6 +6,6 @@
   gap: 1rem;
 }
 
-.comment_input button {
+.reply_input button {
   justify-self: flex-end;
 }

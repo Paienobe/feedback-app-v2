@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { userImages } from "../../../utils/images";
-import CommentInput from "../CommentInput/CommentInput";
+import ReplyInput from "../ReplyInput/ReplyInput";
 import styles from "./Comment.module.css";
 import { CommentProp } from "./types";
 import { CommentType } from "../../../types";
@@ -23,13 +23,15 @@ const Comment = ({ comment, isReply, replyingTo }: CommentProp) => {
         </div>
 
         <button onClick={() => setShowInput(true)}>Reply</button>
+
+        {!isReply && replies?.length && <div className={styles.line}></div>}
       </div>
 
       <p className={styles.comment_content}>
         {isReply && <span>@{replyingTo} </span>}
         {content}
       </p>
-      {showInput && <CommentInput />}
+      {showInput && <ReplyInput />}
 
       <div className={styles.reply_holder}>
         {replies?.map((reply) => {
