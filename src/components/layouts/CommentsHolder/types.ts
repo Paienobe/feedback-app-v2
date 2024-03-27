@@ -1,5 +1,5 @@
-import { Comment } from "../../../types";
+import { CommentType } from "../../../types";
 
 export type CommentsHolderProps = {
-  comments: Comment[];
+  comments: CommentType[];
 };

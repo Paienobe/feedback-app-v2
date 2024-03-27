@@ -6,6 +6,7 @@ import ProductRequest from "../../components/layouts/ProductRequest/ProductReque
 import CommentsHolder from "../../components/layouts/CommentsHolder/CommentsHolder";
 import leftIcon from "../../assets/shared/icon-arrow-left.svg";
 import Button from "../../components/ui/Button/Button";
+import CommentInput from "../../components/layouts/CommentInput/CommentInput";
 
 const CommentsPage = () => {
   const { id } = useParams();
@@ -41,6 +42,7 @@ const CommentsPage = () => {
       </div>
       <ProductRequest request={currentRequest} />
       <CommentsHolder comments={currentRequest.comments} />
+      <CommentInput />
     </section>
   );
 };

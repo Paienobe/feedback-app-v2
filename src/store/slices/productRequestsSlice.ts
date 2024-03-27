@@ -31,8 +31,27 @@ export const productRequestsSlice = createSlice({
         state.value = data.productRequests;
       }
     },
+    createComment: (state, action) => {
+      const { requestId, comment } = action.payload;
+
+      let request = state.value.find((request) => {
+        return request.id == requestId;
+      });
+
+      if (request) {
+        request = { ...request, comments: [...request.comments, comment] };
+
+        const updatedState = state.value.map((productRequest) => {
+          if (productRequest.id == requestId) {
+            return request!;
+          } else return productRequest;
+        });
+
+        state.value = updatedState;
+      }
+    },
   },
 });
 
-export const { vote, filter } = productRequestsSlice.actions;
+export const { vote, filter, createComment } = productRequestsSlice.actions;
 export default productRequestsSlice.reducer;

@@ -24,7 +24,9 @@ const Comment = ({ comment, isReply, replyingTo }: CommentProp) => {
 
         <button onClick={() => setShowInput(true)}>Reply</button>
 
-        {!isReply && replies?.length && <div className={styles.line}></div>}
+        {!isReply && replies?.length ? (
+          <div className={styles.line}></div>
+        ) : null}
       </div>
 
       <p className={styles.comment_content}>

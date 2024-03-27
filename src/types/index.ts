@@ -9,7 +9,7 @@ export interface Request {
 }
 
 export interface CommentType {
-  id: number;
+  id: number | string;
   content: string;
   user: User;
   replies?: Reply[];

@@ -1,6 +1,7 @@
 .comments_page {
   width: 100%;
   max-width: 45.625rem;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
