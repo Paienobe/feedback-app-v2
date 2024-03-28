@@ -6,7 +6,12 @@ import { CommentProp } from "./types";
 import { CommentType } from "../../../types";
 import { v4 as uuid } from "uuid";
 
-const Comment = ({ comment, isReply, replyingTo }: CommentProp) => {
+const Comment = ({
+  comment,
+  isReply,
+  replyingTo,
+  parentCommentId,
+}: CommentProp) => {
   const { user, content, replies } = comment;
 
   const [showInput, setShowInput] = useState(false);
@@ -33,7 +38,13 @@ const Comment = ({ comment, isReply, replyingTo }: CommentProp) => {
         {isReply && <span>@{replyingTo} </span>}
         {content}
       </p>
-      {showInput && <ReplyInput />}
+      {showInput && (
+        <ReplyInput
+          comment={comment}
+          setShowInput={setShowInput}
+          parentCommentId={isReply ? parentCommentId : undefined}
+        />
+      )}
 
       <div className={styles.reply_holder}>
         {replies?.map((reply) => {
@@ -43,6 +54,7 @@ const Comment = ({ comment, isReply, replyingTo }: CommentProp) => {
               comment={reply as unknown as CommentType}
               isReply={true}
               replyingTo={reply.replyingTo}
+              parentCommentId={comment.id}
             />
           );
         })}

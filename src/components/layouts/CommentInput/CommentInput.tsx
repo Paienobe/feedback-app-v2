@@ -3,7 +3,7 @@ import Textarea from "../../ui/Textarea/Textarea";
 import Button from "../../ui/Button/Button";
 import styles from "./CommentInput.module.css";
 import { useDispatch } from "react-redux";
-import { createComment } from "../../../store/slices/productRequestsSlice";
+import { comment } from "../../../store/slices/productRequestsSlice";
 import { useParams } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import { useSelector } from "react-redux";
@@ -15,13 +15,13 @@ const CommentInput = () => {
   const user = useSelector((state: RootState) => state.user.value);
   const maxCharacterLength = 225;
 
-  const [comment, setComment] = useState("");
+  const [commentContent, setCommentContent] = useState("");
   const [characterLength, setCharacterLength] = useState(maxCharacterLength);
 
   const handleCommentInput = (text: string) => {
     const validText = text.substring(0, maxCharacterLength);
 
-    setComment(validText);
+    setCommentContent(validText);
     const availableCharacters = maxCharacterLength - validText.length;
 
     if (availableCharacters > 0) {
@@ -36,8 +36,8 @@ const CommentInput = () => {
       user: user,
       replies: [],
     };
-    dispatch(createComment({ requestId: id, comment: newComment }));
-    setComment("");
+    dispatch(comment({ requestId: id, comment: newComment }));
+    setCommentContent("");
     setCharacterLength(maxCharacterLength);
   };
 
@@ -54,7 +54,7 @@ const CommentInput = () => {
         rows={3.5}
         width="100%"
         max={maxCharacterLength}
-        text={comment}
+        text={commentContent}
         onChangeFunc={handleCommentInput}
       />
       <p>{characterLength} characters left</p>

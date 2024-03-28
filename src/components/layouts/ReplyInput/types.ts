@@ -1,8 +1,7 @@
 import { CommentType } from "../../../types";
 
-export type CommentProp = {
+export type ReplyInputProps = {
   comment: CommentType;
-  isReply: boolean;
-  replyingTo?: string;
+  setShowInput: React.Dispatch<React.SetStateAction<boolean>>;
   parentCommentId?: string | number;
 };
