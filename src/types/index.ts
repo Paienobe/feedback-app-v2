@@ -5,11 +5,11 @@ export interface Request {
   upvotes: number;
   status: string;
   description: string;
-  comments: Comment[];
+  comments: CommentType[];
 }
 
-export interface Comment {
-  id: number;
+export interface CommentType {
+  id: number | string;
   content: string;
   user: User;
   replies?: Reply[];

@@ -1,7 +1,27 @@
 .comments_page {
   width: 100%;
   max-width: 45.625rem;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  padding: 8.125rem 0;
+}
+
+.comments_holder_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comments_holder_header > button:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--light-text-color);
 }

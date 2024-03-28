@@ -1,0 +1,30 @@
+.comment_input {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: var(--main-border-radius);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.comment_input > h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--dark-text-color);
+  grid-column: 1/-1;
+}
+
+.comment_input > textarea {
+  grid-column: 1/-1;
+}
+
+.comment_input > p {
+  color: var(--light-text-color);
+}
+
+.comment_input > button {
+  justify-self: flex-end;
+  grid-column: -2/-1;
+  font-weight: 700;
+}

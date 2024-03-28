@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from "../../data/data.json";
+import { Request } from "../../types";
 
 export const productRequestsSlice = createSlice({
   name: "product-requests",
-  initialState: { value: data.productRequests },
+  initialState: { value: data.productRequests as Request[] },
   reducers: {
     vote: (state, action) => {
       const { id, isUpvote } = action.payload;
@@ -31,8 +32,64 @@ export const productRequestsSlice = createSlice({
         state.value = data.productRequests;
       }
     },
+    comment: (state, action) => {
+      const { requestId, comment } = action.payload;
+
+      let request = state.value.find((request) => {
+        return request.id == requestId;
+      });
+
+      if (request) {
+        request = { ...request, comments: [...request.comments, comment] };
+
+        const updatedState = state.value.map((productRequest) => {
+          if (productRequest.id == requestId) {
+            return request!;
+          } else return productRequest;
+        });
+
+        state.value = updatedState;
+      }
+    },
+    reply: (state, action) => {
+      const { requestId, commentId, reply } = action.payload;
+      let request = state.value.find((request) => {
+        return request.id == requestId;
+      });
+
+      if (request) {
+        const comment = request.comments.find((comment) => {
+          return comment.id == commentId;
+        });
+
+        if (comment) {
+          if (comment.replies) {
+            comment.replies?.push(reply);
+          } else {
+            comment.replies = [reply];
+          }
+
+          request = {
+            ...request,
+            comments: request.comments.map((item) => {
+              if (item.id == commentId) {
+                return comment;
+              } else return item;
+            }),
+          };
+
+          const updatedState = state.value.map((item) => {
+            if (item.id == requestId) {
+              return request!;
+            } else return item;
+          });
+
+          state.value = updatedState;
+        }
+      }
+    },
   },
 });
 
-export const { vote, filter } = productRequestsSlice.actions;
+export const { vote, filter, comment, reply } = productRequestsSlice.actions;
 export default productRequestsSlice.reducer;
