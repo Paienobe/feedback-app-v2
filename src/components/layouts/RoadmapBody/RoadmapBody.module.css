@@ -1,0 +1,22 @@
+.roadmap_body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.roadmap_column h2 {
+  font-size: 1.125rem;
+  color: var(--dark-text-color);
+}
+
+.roadmap_column p {
+  color: var(--light-text-color);
+}
+
+.roadmap_request_holder {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
