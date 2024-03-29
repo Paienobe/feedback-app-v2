@@ -2,8 +2,4 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  /* position: sticky;
-  top: 8.125rem;
-  top: 2.125rem;
-  height: fit-content; */
 }
