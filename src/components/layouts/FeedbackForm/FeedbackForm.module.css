@@ -1,0 +1,40 @@
+.feedback_form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--main-border-radius);
+  position: relative;
+}
+
+.feedback_form_icon {
+  position: absolute;
+  top: -1.75rem;
+}
+
+.feedback_form > h1 {
+  color: var(--dark-text-color);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feedback_form > label {
+  font-weight: 700;
+  color: var(--dark-text-color);
+}
+
+.feedback_form > p {
+  color: var(--light-text-color);
+}
+
+.feedback_form > input,
+.feedback_form > textarea {
+  margin: 1rem 0 1.5rem 0;
+}
+
+.feedback_form_buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 1rem;
+}
