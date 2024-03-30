@@ -29,14 +29,15 @@ const ReplyInput = ({
       replyingTo: comment.user.username,
       user,
     };
-
-    dispatch(
-      reply({
-        requestId: id,
-        commentId: parentCommentId ?? comment.id,
-        reply: newReply,
-      })
-    );
+    if (replyContent) {
+      dispatch(
+        reply({
+          requestId: id,
+          commentId: parentCommentId ?? comment.id,
+          reply: newReply,
+        })
+      );
+    }
   };
 
   return (

@@ -32,13 +32,16 @@ const CommentInput = () => {
   const handleCreateComment = () => {
     const newComment = {
       id: uuid(),
-      content: comment,
+      content: commentContent,
       user: user,
       replies: [],
     };
-    dispatch(comment({ requestId: id, comment: newComment }));
-    setCommentContent("");
-    setCharacterLength(maxCharacterLength);
+
+    if (commentContent) {
+      dispatch(comment({ requestId: id, comment: newComment }));
+      setCommentContent("");
+      setCharacterLength(maxCharacterLength);
+    }
   };
 
   return (
