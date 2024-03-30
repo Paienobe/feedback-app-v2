@@ -1,0 +1,32 @@
+.sort_dropdown {
+  position: absolute;
+  background-color: white;
+  top: 4rem;
+  width: 15.938rem;
+  box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.350492);
+  border-radius: var(--main-border-radius);
+}
+
+.sort_dropdown > button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15.938rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--light-tile-color);
+  color: var(--light-text-color);
+  transition: all 0.25s ease-in-out;
+}
+
+.sort_dropdown > button:hover {
+  color: var(--purple);
+}
+
+.sort_dropdown > button:last-of-type {
+  border-bottom: none;
+}

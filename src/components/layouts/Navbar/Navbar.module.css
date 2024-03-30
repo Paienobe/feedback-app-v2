@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   max-height: 4.75rem;
+  align-items: center;
 }
 
 .navbar svg {
@@ -13,17 +14,21 @@
   max-height: 24px;
 }
 
-.navbar > div:first-of-type {
+.navbar_info_section {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.navbar > div:first-of-type > h1 {
+.navbar_info_section {
   font-size: 1.125rem;
 }
 
-.navbar > button:first-of-type {
+.dropdown_holder {
+  position: relative;
+}
+
+.dropdown_holder > button:first-of-type {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -33,7 +38,7 @@
   cursor: pointer;
 }
 
-.navbar > button:first-of-type > span {
+.dropdown_holder > button:first-of-type > span {
   font-weight: 700;
 }
 
