@@ -88,8 +88,22 @@ export const productRequestsSlice = createSlice({
         }
       }
     },
+    sort: (state, action) => {
+      const { sortBy } = action.payload;
+      const least = state.value.sort((request1, request2) => {
+        const sortOptions: { [x: string]: number } = {
+          "Least Upvotes": request1.upvotes - request2.upvotes,
+          "Most Upvotes": request2.upvotes - request1.upvotes,
+          "Most Comments": request2.comments.length - request1.comments.length,
+          "Least Comments": request1.comments.length - request2.comments.length,
+        };
+        return sortOptions[sortBy];
+      });
+      state.value = least;
+    },
   },
 });
 
-export const { vote, filter, comment, reply } = productRequestsSlice.actions;
+export const { vote, filter, comment, reply, sort } =
+  productRequestsSlice.actions;
 export default productRequestsSlice.reducer;
