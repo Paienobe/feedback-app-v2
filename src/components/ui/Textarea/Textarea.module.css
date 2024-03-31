@@ -3,4 +3,5 @@
   border-radius: var(--main-border-radius);
   border: none;
   background-color: var(--background-color);
+  color: var(--dark-text-color);
 }

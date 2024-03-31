@@ -107,9 +107,15 @@ export const productRequestsSlice = createSlice({
       const newProductRequest = createProductRequest(data);
       state.value = [...state.value, newProductRequest];
     },
+    deleteRequest: (state, action) => {
+      const updatedState = state.value.filter((request) => {
+        return request.id != action.payload;
+      });
+      state.value = updatedState;
+    },
   },
 });
 
-export const { vote, filter, comment, reply, sort, request } =
+export const { vote, filter, comment, reply, sort, request, deleteRequest } =
   productRequestsSlice.actions;
 export default productRequestsSlice.reducer;

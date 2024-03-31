@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Comments.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
@@ -10,6 +10,7 @@ import BackButton from "../../components/layouts/BackButton/BackButton";
 
 const CommentsPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const productRequests = useSelector(
     (state: RootState) => state.productRequests.value
@@ -33,7 +34,7 @@ const CommentsPage = () => {
           width="8.75rem"
           height="2.75rem"
           backgroundColor="#4661e6"
-          onClick={() => {}}
+          onClick={() => navigate(`/edit/${id}`)}
         />
       </div>
       <ProductRequest request={currentRequest} />
