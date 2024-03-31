@@ -113,9 +113,26 @@ export const productRequestsSlice = createSlice({
       });
       state.value = updatedState;
     },
+    edit: (state, action) => {
+      const { data } = action.payload;
+      const chosenRequest = state.value.find((request) => {
+        return request.id == data.id;
+      });
+      if (chosenRequest) {
+        // const updatedRequest = {...chosenRequest, }
+      }
+    },
   },
 });
 
-export const { vote, filter, comment, reply, sort, request, deleteRequest } =
-  productRequestsSlice.actions;
+export const {
+  vote,
+  filter,
+  comment,
+  reply,
+  sort,
+  request,
+  deleteRequest,
+  edit,
+} = productRequestsSlice.actions;
 export default productRequestsSlice.reducer;

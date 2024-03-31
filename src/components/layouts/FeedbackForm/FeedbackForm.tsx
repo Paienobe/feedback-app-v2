@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import {
   request,
   deleteRequest,
+  edit,
 } from "../../../store/slices/productRequestsSlice";
 import { useDispatch } from "react-redux";
 import { FeedbackFormProps } from "./types";
@@ -42,7 +43,10 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
     navigate("/");
   };
 
-  const handleEdit = () => {};
+  const handleEdit = () => {
+    dispatch(edit({ ...formData, category: selectedCategory, status }));
+    navigate(-1);
+  };
 
   useEffect(() => {
     if (requestData) {
