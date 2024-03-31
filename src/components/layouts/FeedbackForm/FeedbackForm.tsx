@@ -44,7 +44,14 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
   };
 
   const handleEdit = () => {
-    dispatch(edit({ ...formData, category: selectedCategory, status }));
+    dispatch(
+      edit({
+        ...formData,
+        category: selectedCategory,
+        status,
+        id: requestData?.id,
+      })
+    );
     navigate(-1);
   };
 

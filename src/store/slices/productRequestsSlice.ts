@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import data from "../../data/data.json";
 import { Request } from "../../types";
 import { createProductRequest } from "../../utils/helpers/create-product-request";
+import { editProductRequest } from "../../utils/helpers/edit-product-request";
 
 export const productRequestsSlice = createSlice({
   name: "product-requests",
@@ -114,12 +115,19 @@ export const productRequestsSlice = createSlice({
       state.value = updatedState;
     },
     edit: (state, action) => {
-      const { data } = action.payload;
+      const data = action.payload;
+
       const chosenRequest = state.value.find((request) => {
         return request.id == data.id;
       });
       if (chosenRequest) {
-        // const updatedRequest = {...chosenRequest, }
+        const updatedRequest = editProductRequest(data, chosenRequest);
+        const updatedState = state.value.map((request) => {
+          if (request.id == chosenRequest.id) {
+            return updatedRequest;
+          } else return request;
+        });
+        state.value = updatedState;
       }
     },
   },
