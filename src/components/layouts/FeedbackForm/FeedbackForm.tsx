@@ -6,13 +6,38 @@ import Button from "../../ui/Button/Button";
 import { useNavigate } from "react-router-dom";
 import FormDropdown from "../FormDropdown/FormDropdown";
 import { useState } from "react";
+import { request } from "../../../store/slices/productRequestsSlice";
+import { useDispatch } from "react-redux";
 
 const FeedbackForm = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({ title: "", detail: "" });
   const [selectedCategory, setSelectedCategory] = useState("");
   const availableCategories = ["Feature", "UI", "UX", "Enhancement", "Bug"];
+
+  const handleTitle = (value: string) => {
+    setFormData({ ...formData, title: value });
+  };
+
+  const handleDetail = (value: string) => {
+    setFormData({ ...formData, detail: value });
+  };
+
+  const handleCreateRequest = () => {
+    const data = { ...formData, category: selectedCategory };
+    dispatch(request({ data }));
+    navigate("/");
+  };
+
   return (
-    <form className={styles.feedback_form} onSubmit={(e) => e.preventDefault()}>
+    <form
+      className={styles.feedback_form}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleCreateRequest();
+      }}
+    >
       <h1>Create New Feedback</h1>
       <div className={styles.feedback_form_icon}>
         <img src={newIcon} alt="" />
@@ -20,7 +45,7 @@ const FeedbackForm = () => {
 
       <label>Feedback Title</label>
       <p>Add a short, descriptive headline</p>
-      <Input value="" onChangeFunc={() => {}} />
+      <Input value={formData.title} onChangeFunc={handleTitle} />
 
       <label>Category</label>
       <p>Choose a category for your feedback</p>
@@ -37,9 +62,9 @@ const FeedbackForm = () => {
       <Textarea
         cols={10}
         rows={3}
-        text=""
+        text={formData.detail}
         width="100%"
-        onChangeFunc={() => {}}
+        onChangeFunc={handleDetail}
       />
 
       <div className={styles.feedback_form_buttons}>

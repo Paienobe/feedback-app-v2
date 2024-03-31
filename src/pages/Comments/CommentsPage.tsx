@@ -16,7 +16,7 @@ const CommentsPage = () => {
   );
 
   const currentRequest = productRequests.find((request) => {
-    return request.id === Number(id);
+    return request.id == id;
   });
 
   if (!currentRequest) {

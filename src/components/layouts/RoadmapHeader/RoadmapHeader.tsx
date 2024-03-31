@@ -20,7 +20,7 @@ const RoadmapHeader = () => {
         height="2.75rem"
         backgroundColor="#ad1fea"
         text="+ Add Feedback"
-        onClick={() => {}}
+        onClick={() => navigate("/add")}
       />
     </header>
   );

@@ -11,7 +11,7 @@ const FormDropdown = ({
   const [showOptions, setShowOptions] = useState(false);
   return (
     <div className={styles.form_dropdown}>
-      <button onClick={() => setShowOptions(!showOptions)}>
+      <button onClick={() => setShowOptions(!showOptions)} type="button">
         <p>{defaultText}</p>
         <img src={downIcon} alt="" />
       </button>
@@ -21,6 +21,7 @@ const FormDropdown = ({
           {dropdownOptions.map((option) => {
             return (
               <button
+                type="button"
                 key={option}
                 onClick={() => {
                   setSelection(option);
