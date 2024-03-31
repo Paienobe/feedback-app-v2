@@ -4,4 +4,5 @@
   border: none;
   padding: 0.75rem 1rem;
   border-radius: var(--main-border-radius);
+  color: var(--dark-text-color);
 }

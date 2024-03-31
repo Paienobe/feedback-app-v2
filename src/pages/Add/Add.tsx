@@ -6,7 +6,7 @@ const Add = () => {
   return (
     <section className={styles.add_page}>
       <BackButton />
-      <FeedbackForm />
+      <FeedbackForm isEdit={false} />
     </section>
   );
 };

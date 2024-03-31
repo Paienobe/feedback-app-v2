@@ -17,6 +17,7 @@
   cursor: pointer;
   color: var(--dark-text-color);
   min-height: 2.719rem;
+  text-transform: capitalize;
 }
 
 .form_dropdown > div {
@@ -26,6 +27,7 @@
   width: 60%;
   box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.350492);
   border-radius: var(--main-border-radius);
+  z-index: 1;
 }
 
 .form_dropdown > div > button {

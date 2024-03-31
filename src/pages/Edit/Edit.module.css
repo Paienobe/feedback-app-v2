@@ -1,0 +1,10 @@
+.edit_page {
+  width: 40%;
+  max-width: 38.75rem;
+  margin: auto;
+  padding: 8.125rem 0;
+}
+
+.edit_page > button {
+  margin-bottom: 4rem;
+}
