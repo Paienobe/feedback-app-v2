@@ -7,6 +7,7 @@ import { RootState } from "../../../store/store";
 import SortDropdown from "../SortDropdown/SortDropdown";
 import { useState } from "react";
 import { sortingOptions } from "../../../utils/constants/sorting-constants";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const suggestions = useSelector(
@@ -14,6 +15,8 @@ const Navbar = () => {
   );
   const [showDropdown, setShowDropdown] = useState(false);
   const [chosenSort, setChosenSort] = useState(sortingOptions[0]);
+
+  const navigate = useNavigate();
 
   return (
     <nav className={styles.navbar}>
@@ -41,7 +44,7 @@ const Navbar = () => {
         width="9.75rem"
         height="2.75rem"
         backgroundColor="var(--purple)"
-        onClick={() => {}}
+        onClick={() => navigate("/add")}
       />
     </nav>
   );

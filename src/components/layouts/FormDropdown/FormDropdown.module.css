@@ -1,0 +1,53 @@
+.form_dropdown {
+  width: 100%;
+  position: relative;
+}
+
+.form_dropdown > button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  background-color: var(--background-color);
+  border: none;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0 1.5rem 0;
+  border-radius: var(--main-border-radius);
+  cursor: pointer;
+  color: var(--dark-text-color);
+  min-height: 2.719rem;
+}
+
+.form_dropdown > div {
+  position: absolute;
+  background-color: white;
+  top: 4rem;
+  width: 60%;
+  box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.350492);
+  border-radius: var(--main-border-radius);
+}
+
+.form_dropdown > div > button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15.938rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--light-tile-color);
+  color: var(--light-text-color);
+  transition: all 0.25s ease-in-out;
+}
+
+.form_dropdown > div > button:hover {
+  color: var(--purple);
+}
+
+.form_dropdown > div > button:last-of-type {
+  border-bottom: none;
+}

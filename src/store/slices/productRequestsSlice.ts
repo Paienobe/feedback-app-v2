@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import data from "../../data/data.json";
 import { Request } from "../../types";
+import { createProductRequest } from "../../utils/helpers/create-product-request";
 
 export const productRequestsSlice = createSlice({
   name: "product-requests",
@@ -101,9 +102,14 @@ export const productRequestsSlice = createSlice({
       });
       state.value = least;
     },
+    request: (state, action) => {
+      const { data } = action.payload;
+      const newProductRequest = createProductRequest(data);
+      state.value = [...state.value, newProductRequest];
+    },
   },
 });
 
-export const { vote, filter, comment, reply, sort } =
+export const { vote, filter, comment, reply, sort, request } =
   productRequestsSlice.actions;
 export default productRequestsSlice.reducer;

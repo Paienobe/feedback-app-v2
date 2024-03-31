@@ -1,5 +1,5 @@
 export interface Request {
-  id: number;
+  id: number | string;
   title: string;
   category: string;
   upvotes: number;
