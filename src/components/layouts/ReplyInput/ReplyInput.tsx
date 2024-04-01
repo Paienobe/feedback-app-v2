@@ -7,6 +7,7 @@ import { reply } from "../../../store/slices/productRequestsSlice";
 import { ReplyInputProps } from "./types";
 import { useState } from "react";
 import { RootState } from "../../../store/store";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 const ReplyInput = ({
   comment,
@@ -40,6 +41,8 @@ const ReplyInput = ({
     }
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <form
       className={styles.reply_input}
@@ -57,7 +60,7 @@ const ReplyInput = ({
       />
       <Button
         text="Post Reply"
-        width="7.25rem"
+        width={!isMobile ? "7.25rem" : "100%"}
         height="2.75rem"
         backgroundColor="#ad1fea"
         onClick={handleCreateReply}

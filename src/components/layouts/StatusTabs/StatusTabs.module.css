@@ -1,0 +1,14 @@
+.status_tabs {
+  border-bottom: 1px solid rgba(140, 146, 179, 0.25);
+}
+
+.status_tabs > button {
+  width: calc(100% / 3);
+  font-weight: 700;
+  background-color: transparent;
+  border: 4px solid transparent;
+  color: rgba(58, 67, 116, 0.4);
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  cursor: pointer;
+}

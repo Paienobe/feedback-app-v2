@@ -14,6 +14,7 @@ import {
 } from "../../../store/slices/productRequestsSlice";
 import { useDispatch } from "react-redux";
 import { FeedbackFormProps } from "./types";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
   const [status, setStatus] = useState("");
   const availableCategories = ["Feature", "UI", "UX", "Enhancement", "Bug"];
   const statuses = ["Suggestion", "Planned", "In-Progress", "Live"];
+  const isMobile = useIsMobile();
 
   const handleTitle = (value: string) => {
     setFormData({ ...formData, title: value });
@@ -119,7 +121,7 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
             text="Delete"
             backgroundColor="#d73737"
             height="2.75rem"
-            width="5.75rem"
+            width={isMobile ? "100%" : "5.75rem"}
             onClick={handleDelete}
           />
         )}
@@ -129,7 +131,7 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
             text="Cancel"
             backgroundColor="#373f68"
             height="2.75rem"
-            width="5.75rem"
+            width={isMobile ? "100%" : "5.75rem"}
             onClick={() => navigate(-1)}
           />
 
@@ -137,7 +139,7 @@ const FeedbackForm = ({ isEdit, requestData }: FeedbackFormProps) => {
             text={!isEdit ? "Add Feedback" : "Save Changes"}
             backgroundColor="#ad1fea"
             height="2.75rem"
-            width="8.875rem"
+            width={!isMobile ? "8.875rem" : "100%"}
             onClick={() => {}}
           />
         </div>

@@ -25,3 +25,22 @@
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
+@media (max-width: 480px) {
+  .request_holder {
+    width: 90%;
+    margin: auto;
+  }
+
+  .empty_holder {
+    padding: 1rem;
+  }
+
+  .empty_holder h1 {
+    margin: 1rem 0;
+  }
+
+  .empty_holder br {
+    display: none;
+  }
+}

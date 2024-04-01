@@ -23,3 +23,16 @@
   font-weight: 700;
   font-size: 1.25rem;
 }
+
+@media (max-width: 480px) {
+  .logo_tile > div {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo_tile > div > button {
+    background-color: transparent;
+    border: none;
+  }
+}

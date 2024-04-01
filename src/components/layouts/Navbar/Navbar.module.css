@@ -63,3 +63,14 @@
     grid-template-columns: 1.25fr 1fr 2fr;
   }
 }
+
+@media (max-width: 480px) {
+  .navbar {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: 0;
+  }
+
+  .navbar_info_section {
+    display: none;
+  }
+}

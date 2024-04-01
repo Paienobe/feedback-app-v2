@@ -6,6 +6,9 @@ import filterRequestsByStatus from "../../../utils/helpers/filterRequestsByStatu
 import { Request } from "../../../types";
 import RoadmapRequest from "../RoadmapRequest/RoadmapRequest";
 import { Link } from "react-router-dom";
+import StatusTabs from "../StatusTabs/StatusTabs";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useState } from "react";
 
 const RoadmapBody = () => {
   const productRequests = useSelector(
@@ -18,10 +21,26 @@ const RoadmapBody = () => {
     Live: filterRequestsByStatus(productRequests, "live"),
   };
 
+  const isMobile = useIsMobile();
+
+  const [selectedStatus, setSelectedStatus] = useState(
+    roadmapCategories[0].name
+  );
+
   return (
     <section className={styles.roadmap_body}>
+      {isMobile && (
+        <StatusTabs
+          requestObject={requests}
+          selectedStatus={selectedStatus}
+          setSelectedStatus={setSelectedStatus}
+        />
+      )}
       {roadmapCategories.map((category) => {
         const categoryRequests = requests[category.name];
+        if (isMobile && category.name !== selectedStatus) {
+          return null;
+        }
         return (
           <div key={category.name} className={styles.roadmap_column}>
             <h2>

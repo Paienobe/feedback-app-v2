@@ -32,3 +32,10 @@
   font-weight: 700;
   color: white;
 }
+
+@media (max-width: 480px) {
+  .roadmap_header {
+    border-radius: 0;
+    padding: 1.5rem 1rem;
+  }
+}

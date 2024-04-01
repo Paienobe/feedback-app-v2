@@ -25,3 +25,9 @@
     width: 90%;
   }
 }
+
+@media (max-width: 480px) {
+  .comments_page {
+    padding: 2.25rem 0;
+  }
+}

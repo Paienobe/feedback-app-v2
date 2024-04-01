@@ -79,3 +79,9 @@
   top: 5rem;
   left: calc(2.5rem / 2 - 2px);
 }
+
+@media (max-width: 480px) {
+  .comment_content {
+    margin-left: 0;
+  }
+}

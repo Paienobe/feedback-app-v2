@@ -27,6 +27,7 @@ const ProductRequest = ({ request }: ProductRequestProps) => {
         <img src={upIcon} alt="" />
         {upvotes}
       </button>
+
       <Link to={`/comments/${id}`}>
         <div className={styles.product_request__main}>
           <div className={styles.request_info}>
@@ -34,13 +35,13 @@ const ProductRequest = ({ request }: ProductRequestProps) => {
             <p>{description}</p>
             <div>{category}</div>
           </div>
-
-          <div className={styles.comments_info}>
-            <img src={commentIcon} alt="" />
-            {comments.length}
-          </div>
         </div>
       </Link>
+
+      <div className={styles.comments_info}>
+        <img src={commentIcon} alt="" />
+        {comments.length}
+      </div>
     </section>
   );
 };

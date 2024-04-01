@@ -1,14 +1,30 @@
+import { useLayoutEffect, useState } from "react";
 import CategoryTile from "../CategoryTile/CategoryTile";
-import LogoTile from "../NameTile/LogoTile";
+import NameTile from "../NameTile/NameTile";
 import RoadmapTile from "../RoadmapTile/RoadmapTile";
 import styles from "./SideSection.module.css";
 
 const SideSection = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  useLayoutEffect(() => {
+    const documentBody = document.body;
+    if (showMenu) {
+      documentBody.style.overflowY = "hidden";
+    } else {
+      documentBody.style.overflowY = "visible";
+    }
+  }, [showMenu]);
+
   return (
     <section className={styles.side_section}>
-      <LogoTile />
-      <CategoryTile />
-      <RoadmapTile />
+      <NameTile showMenu={showMenu} setShowMenu={setShowMenu} />
+      <div style={{ left: showMenu ? "0" : "100%" }}>
+        <div>
+          <CategoryTile />
+          <RoadmapTile />
+        </div>
+      </div>
     </section>
   );
 };

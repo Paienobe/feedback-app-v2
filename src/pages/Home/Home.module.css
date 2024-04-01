@@ -27,3 +27,11 @@
     width: 90%;
   }
 }
+
+@media (max-width: 480px) {
+  .home_page {
+    width: 100%;
+    padding-top: 0;
+    gap: 0;
+  }
+}

@@ -20,3 +20,16 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
+
+@media (max-width: 480px) {
+  .roadmap_body {
+    margin-top: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap_column {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2.25rem;
+  }
+}

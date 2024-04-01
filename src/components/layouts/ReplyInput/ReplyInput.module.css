@@ -9,3 +9,14 @@
 .reply_input button {
   justify-self: flex-end;
 }
+
+@media (max-width: 480px) {
+  .reply_input {
+    margin-left: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .reply_input button {
+    width: 100%;
+  }
+}
