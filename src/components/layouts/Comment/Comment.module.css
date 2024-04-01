@@ -84,4 +84,8 @@
   .comment_content {
     margin-left: 0;
   }
+
+  .line {
+    left: -0.75rem;
+  }
 }
