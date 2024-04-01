@@ -8,3 +8,10 @@
 .edit_page > button {
   margin-bottom: 4rem;
 }
+
+@media (max-width: 1024px) {
+  .edit_page {
+    width: 55%;
+    padding: 4.5rem 0;
+  }
+}

@@ -3,3 +3,13 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+@media (max-width: 820px) {
+  .side_section {
+    flex-direction: row;
+  }
+
+  .side_section > section {
+    flex-basis: calc(100% / 3);
+  }
+}

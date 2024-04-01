@@ -8,3 +8,10 @@
 .add_page > button {
   margin-bottom: 4rem;
 }
+
+@media (max-width: 1024px) {
+  .add_page {
+    width: 55%;
+    padding: 4.5rem 0;
+  }
+}
