@@ -24,16 +24,6 @@ export const productRequestsSlice = createSlice({
         state.value = updatedState;
       }
     },
-    filter: (state, action) => {
-      const filteredRequests = data.productRequests.filter((request) => {
-        return request.category.toLowerCase() === action.payload.toLowerCase();
-      });
-      state.value = filteredRequests;
-
-      if (action.payload.toLowerCase() === "all") {
-        state.value = data.productRequests;
-      }
-    },
     comment: (state, action) => {
       const { requestId, comment } = action.payload;
 
@@ -133,14 +123,6 @@ export const productRequestsSlice = createSlice({
   },
 });
 
-export const {
-  vote,
-  filter,
-  comment,
-  reply,
-  sort,
-  request,
-  deleteRequest,
-  edit,
-} = productRequestsSlice.actions;
+export const { vote, comment, reply, sort, request, deleteRequest, edit } =
+  productRequestsSlice.actions;
 export default productRequestsSlice.reducer;

@@ -1,13 +1,9 @@
-import { useState } from "react";
 import styles from "./CategoryTile.module.css";
-import { useDispatch } from "react-redux";
-import { filter } from "../../../store/slices/productRequestsSlice";
+import { useCategoryContextProvider } from "../../../context/CategoryContext";
 
 const CategoryTile = () => {
-  const categories = ["All", "UX", "UI", "Enhancement", "Bug", "Feature"];
-  const [selectedCategory, setSelectedCatrgory] = useState(categories[0]);
-
-  const dispatch = useDispatch();
+  const { categories, selectedCategory, setSelectedCatrgory } =
+    useCategoryContextProvider();
 
   return (
     <section className={styles.category_tile}>
@@ -19,7 +15,6 @@ const CategoryTile = () => {
             key={category}
             onClick={() => {
               setSelectedCatrgory(category);
-              dispatch(filter(category));
             }}
           >
             {category}

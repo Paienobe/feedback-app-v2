@@ -1,5 +1,6 @@
 .main_section {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content;
   gap: 1.5rem;
 }

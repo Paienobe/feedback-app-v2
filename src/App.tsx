@@ -7,19 +7,24 @@ import Roadmap from "./pages/Roadmap/Roadmap";
 import Add from "./pages/Add/Add";
 import CommentsPage from "./pages/Comments/CommentsPage";
 import Edit from "./pages/Edit/Edit";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
 
 function App() {
+  const persistor = persistStore(store);
   return (
     <main>
       <BrowserRouter>
         <Provider store={store}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/comments/:id" element={<CommentsPage />} />
-            <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/add" element={<Add />} />
-            <Route path="/edit/:id" element={<Edit />} />
-          </Routes>
+          <PersistGate persistor={persistor}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/comments/:id" element={<CommentsPage />} />
+              <Route path="/roadmap" element={<Roadmap />} />
+              <Route path="/add" element={<Add />} />
+              <Route path="/edit/:id" element={<Edit />} />
+            </Routes>
+          </PersistGate>
         </Provider>
       </BrowserRouter>
     </main>

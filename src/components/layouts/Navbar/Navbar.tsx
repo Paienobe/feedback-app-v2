@@ -8,6 +8,7 @@ import SortDropdown from "../SortDropdown/SortDropdown";
 import { useState } from "react";
 import { sortingOptions } from "../../../utils/constants/sorting-constants";
 import { useNavigate } from "react-router-dom";
+import { useCategoryContextProvider } from "../../../context/CategoryContext";
 
 const Navbar = () => {
   const suggestions = useSelector(
@@ -16,13 +17,21 @@ const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [chosenSort, setChosenSort] = useState(sortingOptions[0]);
 
+  const { selectedCategory } = useCategoryContextProvider();
   const navigate = useNavigate();
+
+  const visibleSuggestions = suggestions.filter((suggestion) => {
+    return suggestion.category.toLowerCase() === selectedCategory.toLowerCase();
+  });
+
+  const suggestionsLength =
+    selectedCategory === "All" ? suggestions.length : visibleSuggestions.length;
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_info_section}>
         <Bulb />
-        <h1>{suggestions.length} Suggestions</h1>
+        <h1>{suggestionsLength} Suggestions</h1>
       </div>
 
       <div className={styles.dropdown_holder}>
