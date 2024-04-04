@@ -4,19 +4,30 @@ import commentIcon from "../../../assets/shared/icon-comments.svg";
 import upIcon from "../../../assets/shared/icon-arrow-up.svg";
 import { useDispatch } from "react-redux";
 import { vote } from "../../../store/slices/productRequestsSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProductRequest = ({ request }: ProductRequestProps) => {
   const { title, description, category, comments, upvotes, id } = request;
   const dispatch = useDispatch();
 
-  const [isUpvoted, setIsUpvoted] = useState(false);
+  const storedVoteStatus = localStorage.getItem(`vote_status_${id}`);
+  let defaultVoteStatus = false;
+
+  if (storedVoteStatus) {
+    defaultVoteStatus = JSON.parse(storedVoteStatus);
+  }
+
+  const [isUpvoted, setIsUpvoted] = useState(defaultVoteStatus);
 
   const handleVotes = () => {
     dispatch(vote({ id, isUpvote: !isUpvoted }));
     setIsUpvoted(!isUpvoted);
   };
+
+  useEffect(() => {
+    localStorage.setItem(`vote_status_${id}`, JSON.stringify(isUpvoted));
+  }, [isUpvoted, id]);
 
   return (
     <section className={styles.product_request}>
